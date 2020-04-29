@@ -14,7 +14,7 @@ int fact(int n)
 int main()
 {
 int r = fact(5);
-cout<< "Made changes: ";
+cout<< "Program to find factorials: ";
 cout<< "Output is:" << r;
 return 0;
 }
