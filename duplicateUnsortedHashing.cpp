@@ -19,7 +19,7 @@ int main()
     {
         if (H[i] > 1)
         {
-            cout << i << " " << H[i] << endl;
+            cout << "The duplicate is " << i << " they are occuring " << H[i] << " times" << endl;
         }
     }
 }
