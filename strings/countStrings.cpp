@@ -11,7 +11,7 @@ int main()
     {
         if (A[i] == ' ' && A[i - 1] != ' ')
         {
-            space++;
+            space--;
         }
     }
     //counting number of elements
