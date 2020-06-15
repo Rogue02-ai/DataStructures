@@ -1,4 +1,5 @@
-// Program to create a simple linked list and display it.
+// Program to create a simple linked list and display it. (not favorable)
+// here we have to manually insert every element and also allocate every node's next pointer to store the address of next node.
 
 #include <iostream>
 using namespace std;
