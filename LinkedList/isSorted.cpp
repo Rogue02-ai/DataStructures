@@ -1,9 +1,9 @@
-
-// Program to perform  a linear search in an unsorted linked list.
+// Program to check a linked list is Sorted or not.
 
 #include <iostream>
 using namespace std;
 
+// defining node class.
 class Node
 {
 public:
@@ -11,7 +11,7 @@ public:
     Node *next;
 } *first = NULL;
 
-// creation of linked list.
+// function to create a linked list
 void create(int A[], int n)
 {
     Node *t, *last;
@@ -32,40 +32,49 @@ void create(int A[], int n)
     }
 }
 
-//display the created linked list
+// function to display the created linked list.
 void display(Node *p)
 {
-    while (p != 0)
+    while (p)
     {
         cout << p->data << " ";
         p = p->next;
     }
+    cout << endl;
 }
 
-// function to search for the key in the linked list.
-Node *search(Node *p, int key)
+// function to check linked list is sorted or not.
+int isSorted(Node *p)
 {
-    while (p != NULL)
+    int x = -65536;
+    while (p)
     {
-        if (p->data == key)
-            return p;
-
+        if (p->data < x)
+            return 0;
+        x = p->data;
         p = p->next;
     }
-    return NULL;
+    return 1;
 }
 
+// driver code.
 int main()
 {
-    Node *temp;
-    int A[] = {1, 7, 8, 2, 4, 9};
+    int A[] = {10, 20, 30, 44, 40, 50};
     int n = sizeof(A) / sizeof(A[0]);
 
     create(A, n);
 
-    //display(first);
+    display(first);
 
-    temp = search(first, 8);
-    cout << temp->data << " Element found ";
+    if (isSorted(first))
+    {
+        cout << "The list is Sorted";
+    }
+    else
+    {
+        cout << "The list is not sorted";
+    }
+
     return 0;
 }
